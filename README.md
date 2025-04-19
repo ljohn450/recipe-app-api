@@ -1,3 +1,24 @@
+# 🍽️ Recipe App
+
+## Overview
+Welcome to **Recipe App**, your go-to tool for organizing, searching, and managing recipes effortlessly! Whether you're a professional chef or a home cook, this app helps you store and access recipes conveniently.
+
+## Features
+- 📝 Add new recipes with ingredients and step-by-step instructions
+- 🔍 Search recipes by name, category, or ingredients
+- ⭐ Track favorite recipes and cooking history
+- 📦 Export recipes in multiple formats (JSON, text)
+- 🛒 Generate shopping lists based on recipes
+
+## Installation
+To set up the **Recipe App** on your local machine:
+
+```bash
+git clone https://github.com/your-repo/recipe-app.git
+cd recipe-app
+pip install -r requirements.txt
+
+
 import json
 
 # Recipe repository database (stored in a JSON file)
