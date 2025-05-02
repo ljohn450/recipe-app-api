@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ recipe.title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f8f8f8;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+        h1 {
+            color: #b30000;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #333;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        .meta {
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #666;
+        }
+        .tags {
+            background: #eee;
+            padding: 5px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ recipe.title }}</h1>
+        <p class="meta">{{ recipe.description }}</p>
+        <p class="meta">Category: {{ recipe.category }} | Cuisine: {{ recipe.cuisine }}</p>
+        <p class="meta">Prep Time: {{ recipe.prepTime }} min | Cook Time: {{ recipe.cookTime }} min | Servings: {{ recipe.servings }}</p>
+
+        <h2>Ingredients</h2>
+        <ul>
+            {% for item in recipe.ingredients %}
+            <li>{{ item.quantity }} {{ item.name }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Instructions</h2>
+        <ol>
+            {% for step in recipe.instructions %}
+            <li>{{ step }}</li>
+            {% endfor %}
+        </ol>
+
+        <h2>Tags</h2>
+        <p>
+            {% for tag in recipe.tags %}
+            <span class="tags">{{ tag }}</span>
+            {% endfor %}
+        </p>
+    </div>
+</body>
+</html>
